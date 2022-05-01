@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="./static/js/ubicacion.js"></script>
+    <script src="./static/js/mapa.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNpEo_XpZMVD6IXr3yKTg_QnMscCAyjTg&callback=initMap" async defer></script>
+
     <title>Prueba GEOCODER</title>
 </head>
 <body>
     <h1>Probando</h1>
 
-    
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d93604.61709985856!2d-58.474573133747604!3d-34.62030500039016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1651186905876!5m2!1ses-419!2sar" 
-    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div id="mapa"></div>
 
     <h2>Ingrese un lugar y lo mostrare en un mapa</h2>
 
-    <form th:action="@{/api/mapa}" method="POST">
-        <input type="text" name="lugar">
+    <form>
+        <input type="text" id="lugar">
 
-        <button type="submit">Buscar</button>
+        <a onclick="buscarCoordenadasUbicacion()" href="#">BUSCAR</a>
     </form>
-    
 
-    <!--
-    <iframe th:src="${url}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    -->
 </body>
 </html>
