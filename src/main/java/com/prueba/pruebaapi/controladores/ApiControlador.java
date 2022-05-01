@@ -1,6 +1,5 @@
 package com.prueba.pruebaapi.controladores;
 
-import com.prueba.pruebaapi.entidades.Lugar;
 import com.prueba.pruebaapi.entidades.Ubicacion;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +16,19 @@ import org.springframework.web.client.RestTemplate;
 public class ApiControlador {
     
     @RequestMapping(value = "api/lugar", method = RequestMethod.POST)
-    public Ubicacion mostrarMapa(@RequestBody Lugar lugar){
+    public Ubicacion mostrarMapa(@RequestBody String lugar){
         
         Ubicacion ubicacion = new Ubicacion();
         String key = "AIzaSyDNpEo_XpZMVD6IXr3yKTg_QnMscCAyjTg";
-        String lugarABuscar = lugar.getNombre();
+        String lugarABuscar = lugar;
         
         final String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + lugarABuscar + "&key=" + key;
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(url, String.class);
-
         
         ubicacion.setLat(buscarCoordenadas(result, "lat"));
         ubicacion.setLng(buscarCoordenadas(result, "lng"));
-        
-        
+
         return ubicacion;
     }
     
