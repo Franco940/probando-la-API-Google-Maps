@@ -1,7 +1,5 @@
 # aprendiendo-con-API-Google-Maps
 
-Lo que hice en este proyecto fue consumir la API de Google Maps para obtener información sobre la dirección o nombre del lugar que se buscó. Luego, utilizando 
-thymeleaf.
+En este proyecto se consumen las API de Google geocoder y Maps JavaScript API.
 
-Convierto el JSON a String, luego busco las coordenadas latitud y longitud, y luego reemplazo en las coordenadas de la url del iframe con las nuevas coordenadas. 
-De esa forma aparece un mapa centrado con la ubicación en el medio.
+En la primera entrada a la página se muestra el mapa posicionado en la coordenada 0,0. Luego de hacer la busqueda, el mapa de posiciona excatamente centrado sobre la ubicación buscada con un marcador rojo
