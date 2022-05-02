@@ -1,4 +1,4 @@
-# aprendiendo-con-API-Google-Maps
+# probando-con-API-Google-Maps
 
 En este proyecto se consumen las API de Google geocoder y Maps JavaScript API.
 
